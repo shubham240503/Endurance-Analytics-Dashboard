@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Endurance Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b1120] text-slate-100 font-sans h-screen overflow-hidden">
+
+    <div class="h-full w-full overflow-y-auto custom-scrollbar relative z-10 p-4 md:p-6 lg:px-12">
+        
+        <header class="mb-6 flex flex-col items-center justify-center relative py-4">
+            <div class="absolute top-0 w-1/2 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
+            <h1 class="font-sports text-6xl md:text-7xl text-white tracking-wide uppercase drop-shadow-[0_0_15px_rgba(16,185,129,0.2)] m-0 flex items-center gap-4">
+                Endurance <span class="text-emerald-400">Analytics</span>
+            </h1>
+            <div class="flex items-center gap-3 mt-1">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+                </span>
+                <p class="text-slate-400 tracking-[0.3em] uppercase text-xs font-bold">Live Broadcast Telemetry</p>
+            </div>
+        </header>
+
+        <section class="mb-6 bg-slate-800/40 rounded-xl p-5 border-l-4 border-blue-500 shadow-lg relative overflow-hidden">
+            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-satellite-dish text-blue-400"></i> Live Track Simulation
+            </h3>
+            
+            <div class="relative w-full h-44 bg-slate-900/80 rounded-lg border border-slate-700 overflow-hidden flex flex-col justify-evenly shadow-inner">
+                <div class="absolute inset-0 flex flex-col justify-evenly pointer-events-none opacity-20">
+                    <div class="w-full border-t border-dashed border-white"></div>
+                    <div class="w-full border-t border-dashed border-white"></div>
+                    <div class="w-full border-t border-dashed border-white"></div>
+                </div>
+
+                <div class="runner-lane"><div class="runner-wrapper speed-1 text-emerald-500"><div class="wind-effect"></div>
+                    <svg viewBox="0 0 100 100" class="runner-svg">
+                        <g class="arm-b" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="leg-b" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-b" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <line x1="50" y1="25" x2="50" y2="50" stroke-width="8" stroke="currentColor" stroke-linecap="round"/>
+                        <circle cx="50" cy="15" r="8" fill="currentColor"/>
+                        <g class="leg-f" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-f" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="arm-f" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                    </svg>
+                </div></div>
+                <div class="runner-lane"><div class="runner-wrapper speed-2 text-yellow-400"><div class="wind-effect"></div>
+                    <svg viewBox="0 0 100 100" class="runner-svg">
+                        <g class="arm-b" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="leg-b" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-b" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <line x1="50" y1="25" x2="50" y2="50" stroke-width="8" stroke="currentColor" stroke-linecap="round"/>
+                        <circle cx="50" cy="15" r="8" fill="currentColor"/>
+                        <g class="leg-f" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-f" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="arm-f" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                    </svg>
+                </div></div>
+                <div class="runner-lane"><div class="runner-wrapper speed-3 text-blue-500"><div class="wind-effect"></div>
+                    <svg viewBox="0 0 100 100" class="runner-svg">
+                        <g class="arm-b" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="leg-b" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-b" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <line x1="50" y1="25" x2="50" y2="50" stroke-width="8" stroke="currentColor" stroke-linecap="round"/>
+                        <circle cx="50" cy="15" r="8" fill="currentColor"/>
+                        <g class="leg-f" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-f" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="arm-f" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                    </svg>
+                </div></div>
+                <div class="runner-lane"><div class="runner-wrapper speed-4 text-rose-500"><div class="wind-effect"></div>
+                    <svg viewBox="0 0 100 100" class="runner-svg">
+                        <g class="arm-b" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="leg-b" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-b" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <line x1="50" y1="25" x2="50" y2="50" stroke-width="8" stroke="currentColor" stroke-linecap="round"/>
+                        <circle cx="50" cy="15" r="8" fill="currentColor"/>
+                        <g class="leg-f" style="transform-origin: 50px 50px;"><line x1="50" y1="50" x2="50" y2="70" stroke-width="6" stroke="currentColor" stroke-linecap="round"/><g class="calf-f" style="transform-origin: 50px 70px;"><line x1="50" y1="70" x2="50" y2="90" stroke-width="6" stroke="currentColor" stroke-linecap="round"/></g></g>
+                        <g class="arm-f" style="transform-origin: 50px 30px;"><line x1="50" y1="30" x2="50" y2="45" stroke-width="5" stroke="currentColor" stroke-linecap="round"/><g style="transform-origin: 50px 45px; transform: rotate(-90deg);"><line x1="50" y1="45" x2="50" y2="60" stroke-width="5" stroke="currentColor" stroke-linecap="round"/></g></g>
+                    </svg>
+                </div></div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8">
+            
+            <section class="bg-[#121b2b] rounded-xl p-5 border-t-4 border-emerald-500 shadow-xl flex flex-col relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-emerald-500/10 text-9xl"><i class="fa-solid fa-stopwatch"></i></div>
+                <h2 class="font-sports text-3xl text-white uppercase tracking-wider mb-5 flex items-center gap-2 relative z-10">
+                    <i class="fa-solid fa-sliders text-emerald-400"></i> Match Control
+                </h2>
+                
+                <form id="splitForm" class="space-y-4 flex-1 relative z-10">
+                    <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Athlete Name</label>
+                        <input type="text" id="athleteName" required placeholder="e.g., Shubham" 
+                               class="w-full bg-transparent text-sm text-white focus:outline-none font-semibold">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Distance (m)</label>
+                            <input type="number" id="distance" required min="100" step="100" value="200"
+                                   class="w-full bg-transparent text-sm text-white font-mono focus:outline-none">
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-emerald-500/30">
+                            <label class="block text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1">Time (s)</label>
+                            <input type="number" id="splitTime" required min="0" step="0.01" placeholder="0.00"
+                                   class="w-full bg-transparent text-lg text-emerald-400 font-bold font-mono focus:outline-none">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full mt-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-lg shadow-[0_4px_15px_rgba(16,185,129,0.3)] transition-all">
+                        Log Split Data <i class="fa-solid fa-arrow-right-to-bracket ml-2"></i>
+                    </button>
+                </form>
+                
+                <button onclick="clearData()" class="w-full mt-3 bg-transparent border border-rose-500/50 text-rose-400 hover:bg-rose-500 hover:text-white font-bold text-[10px] uppercase tracking-widest py-2 rounded-lg transition-all relative z-10">
+                    <i class="fa-solid fa-trash-can mr-1"></i> Reset Database
+                </button>
+            </section>
+
+            <section class="xl:col-span-2 bg-[#121b2b] rounded-xl p-5 border-t-4 border-purple-500 shadow-xl flex flex-col relative overflow-hidden">
+                <div class="absolute -right-5 -bottom-10 text-purple-500/10 text-9xl"><i class="fa-solid fa-trophy"></i></div>
+                <h2 class="font-sports text-3xl text-white uppercase tracking-wider mb-5 flex items-center gap-2 relative z-10">
+                    <i class="fa-solid fa-ranking-star text-purple-400"></i> Live Leaderboard
+                </h2>
+                
+                <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-3 relative z-10" id="leaderboardList">
+                    <div class="text-center text-slate-500 text-sm font-semibold italic mt-8">Awaiting initial telemetry...</div>
+                </div>
+            </section>
+        </div>
+
+        <section class="chart-track-bg rounded-xl p-5 shadow-2xl relative border border-slate-700/50 mb-12" style="min-height: 500px;">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500"></div>
+            
+            <h3 class="relative z-10 text-sm font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2 bg-slate-900/60 inline-block px-3 py-1 rounded drop-shadow-md">
+                <i class="fa-solid fa-chart-line text-emerald-400"></i> Pacing Strategy Visualization
+            </h3>
+            
+            <div class="relative w-full h-[400px] z-10">
+                <canvas id="pacingChart"></canvas>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
